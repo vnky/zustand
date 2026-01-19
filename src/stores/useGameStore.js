@@ -2,7 +2,8 @@
 import { create } from 'zustand'
 import { combine } from 'zustand/middleware';
 
-const squares = ['O', null, 'X', 'X', 'X', 'O', 'O', null, null]
+const squares = ['O', null, 'X', 'X', 'X', 'O', 'O', null, null];
+
 const useGameStore = create((set) => ({
     squares: Array(9).fill(null),
     history: [Array(9).fill(null)],

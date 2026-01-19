@@ -12,7 +12,6 @@ export default function Home() {
           A modern state management example using Zustand with Next.js 16
         </p>
         <div className="flex flex-col items-center gap-8">
-          <Board />
           <Counter />
         </div>
       </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Board from './Board';
 import useGameStore from '@/stores/useGameStore';
 
@@ -11,9 +12,10 @@ export default function Game() {
     const currentMove = useGameStore((state) => state.currentMove)
     const setCurrentMove = useGameStore((state) => state.setCurrentMove)
     const xIsNext = currentMove % 2 === 0
-    const currentSquares = history[currentMove]
+    const currentSquares = history[currentMove];
 
-
+    console.log(history, xIsNext, currentMove, currentSquares);
+    
 
 
     const handlePlay = (nextSquares) => {

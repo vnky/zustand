@@ -7,13 +7,13 @@ import useGameStore from '@/stores/useGameStore';
 
 export default function Board({ xIsNext, squares, onPlay }) {
 
-  console.log(squares, xIsNext, onPlay);
+  // console.log(squares, xIsNext, onPlay);
 
   const player = xIsNext ? 'X' : 'O';
   const winner = calculateWinner(squares);
   const turns = calculateTurns(squares);
   const status = calculateStatus(winner, turns, player);
-  console.log('winner', winner, turns);
+  // console.log('winner', winner, turns);
 
 
   const handleClick = (i) => {
@@ -26,9 +26,9 @@ export default function Board({ xIsNext, squares, onPlay }) {
   }
 
   return (
-    <div className="flex flex-col items-center gap-4 p-6 border border-gray-300 dark:border-gray-700 rounded-lg min-w-[400px]">
+    <div className={`flex flex-col items-center gap-4 p-6 border rounded-lg min-w-[400px] ${winner ? 'border-green-500' : 'border-gray-300 dark:border-gray-700'}`}>
       <h2 className="text-2xl font-bold">Tic Tac Toe</h2>
-      {winner && <div className="text-lg font-200 text-green-500 mb-4"> Winner of the game: {winner}</div>}
+      {winner && <div className="text-lg font-200 text-green-500 mb-4"> Winner of the game: {winner} - Turns : {turns}</div>}
       {!winner && !turns && <div className="text-lg font-200 text-green-500 mb-4"> Game is Tie </div>}
       <div
         style={{
